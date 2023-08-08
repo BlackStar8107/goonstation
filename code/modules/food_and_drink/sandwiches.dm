@@ -1043,7 +1043,7 @@ Eventually replacing the existing sandwiches/burgers with this new system
 		if(isintangible(ui.user) || isdead(ui.user) || isunconscious(ui.user) || ui.user.hasStatus("resting"))
 			return
 
-		var/s_index = text2num(src.ingredients.len - params["sandwich_index"]) // need to add 1 more to the index because we can't remove the first slice!
+		var/s_index = text2num(src.ingredients.len - params["sandwich_index"] + 1) // need to add 1 more to the index because we can't remove the first slice!
 		boutput(ui.user,"Button click! index:[s_index]  -  action:[action]   -  obj:[src.ingredients[s_index]]") // DEBUG - Please ignore!
 		switch(action)
 			if("remove")
